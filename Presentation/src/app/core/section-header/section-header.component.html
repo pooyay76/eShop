@@ -1,0 +1,21 @@
+<section *ngIf="breadcrumbs && breadcrumbs[breadcrumbs.length-1].label != 'Home'"
+    style="background-color: bisque; margin: 90px 0px 21px 0px; padding: 40px;">
+    <div class="row d-flex justify-content-between" style="text-align: center; align-items: center;">
+        <div class="col-4" style="justify-content: center; align-items: center; text-align: center;">
+            <h2>{{breadcrumbs[breadcrumbs.length-1].label | titlecase}}</h2>
+        </div>
+        <div class="d-flex col-4" style="justify-content: center; align-items: center; text-align: center;">
+            <nav>
+                <ol class="breadcrumb">
+                    <xng-breadcrumb>
+                        <ng-container *xngBreadcrumbItem="let breadcrumbTitle">
+                            {{breadcrumbTitle | titlecase}}
+                        </ng-container>
+                    </xng-breadcrumb>
+                </ol>
+            </nav>
+
+        </div>
+
+    </div>
+</section>

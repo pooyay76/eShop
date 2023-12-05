@@ -1,0 +1,45 @@
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { TestErrorComponent } from './test-error/test-error.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ToastrModule } from 'ngx-toastr';
+import { SectionHeaderComponent } from './section-header/section-header.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ShopRoutingModule } from '../shop/shop-routing.module';
+
+
+@NgModule({
+  declarations: [
+    NavBarComponent,
+    TestErrorComponent,
+    ServerErrorComponent,
+    NotFoundComponent,
+    SectionHeaderComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ToastrModule.forRoot({
+      positionClass: "toast-bottom-right",
+      tapToDismiss: true,
+      closeButton: false,
+      disableTimeOut: true,
+      autoDismiss: false,
+      preventDuplicates: true
+    }),
+    BreadcrumbModule,
+    NgxSpinnerModule,
+    ShopRoutingModule
+  ],
+  exports: [
+    NavBarComponent,
+    SectionHeaderComponent,
+    NgxSpinnerModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class CoreModule { }

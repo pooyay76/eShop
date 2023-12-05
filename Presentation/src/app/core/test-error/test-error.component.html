@@ -1,0 +1,12 @@
+<div class="d-flex flex-row justify-content-between m-5">
+
+    <button class="btn btn-outline-danger" (click)="get400()">Bad Request</button>
+    <button class="btn btn-outline-danger" (click)="get404()">Not Found</button>
+    <button class="btn btn-outline-danger" (click)="get500()">Server Error</button>
+    <button class="btn btn-outline-danger" (click)="getValidationError()">Validation Error</button>
+</div>
+<div *ngIf="validationErrors.length > 0">
+    <ul *ngFor="let error of validationErrors">
+        <li>{{error}}</li>
+    </ul>
+</div>

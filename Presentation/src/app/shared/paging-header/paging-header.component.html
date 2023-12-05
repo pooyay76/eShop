@@ -1,0 +1,10 @@
+<header *ngIf="count && pageSize && pageIndex" style="text-align: center;">
+
+    <span *ngIf="count>0" style="text-align: center;">Showing <strong>
+            {{pageSize*(pageIndex-1)+1}}-{{pageSize*pageIndex > count?
+            count:pageSize*pageIndex}}
+        </strong>of <strong>{{count}}</strong> results
+    </span>
+    <span *ngIf="count == 0"> <strong>0</strong> results
+    </span>
+</header>

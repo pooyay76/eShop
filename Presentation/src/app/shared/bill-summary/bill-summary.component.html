@@ -1,0 +1,11 @@
+<div>
+    <ul class="list-unstyled" *ngIf=" (cartService.billSource$|async) as bill">
+        <li class="d-flex py-3 justify-content-between border-bottom"><strong>Subtotal:
+            </strong><strong>{{bill.subTotal}}</strong>
+        </li>
+        <li class="d-flex py-3 justify-content-between border-bottom"><strong>Shipping Fee:
+            </strong><strong>{{bill.shippingFee}}</strong></li>
+        <li class="d-flex py-3 justify-content-between"><strong>Total:
+            </strong><strong>{{bill.total}}</strong></li>
+    </ul>
+</div>

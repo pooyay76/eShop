@@ -1,0 +1,8 @@
+<div style="margin: 0px 50px;">
+    <h3 style="font-weight: bold;">Internal Server Error</h3>
+    <h5>Try refreshing your page..</h5>
+    <ng-container *ngIf="error">
+        <span>Message:</span>
+        <p class="text-danger">{{error.message}}</p>
+    </ng-container>
+</div>

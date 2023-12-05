@@ -1,0 +1,29 @@
+.cart-no {
+    position: absolute;
+    top: -9px;
+    right: -12px;
+    text-align: center;
+    display: flex;
+    min-width: 25px;
+    align-items: center;
+    justify-content: center;
+    min-height: 25px;
+    border-radius: 50%;
+    background-color: #e15a5a;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #e15a5a;
+}
+
+a.page-link {
+    font-weight: 550;
+    font-size: 21px;
+}
+
+a.active {
+    font-weight: 550;
+    font-size: 21px;
+    color: #e15a5a !important;
+}

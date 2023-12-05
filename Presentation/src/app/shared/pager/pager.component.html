@@ -1,0 +1,4 @@
+<pagination *ngIf="pageSize && count " class="justify-content-center" [totalItems]="count" previousText="&lsaquo;"
+    nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;" [itemsPerPage]="pageSize" [boundaryLinks]="true"
+    [maxSize]="10" (pageChanged)="onPageClick($event)">
+</pagination>
