@@ -1,3 +1,8 @@
+.card {
+    position: relative;
+
+}
+
 button {
     width: 80px;
     height: 40px;
@@ -5,10 +10,8 @@ button {
 }
 
 #card-header-section {
-    cursor: pointer;
     text-align: center;
     align-items: center;
-    position: relative;
 }
 
 #hover-overlay {
@@ -22,11 +25,8 @@ button {
     top: 0;
     right: 0;
     opacity: 0;
-    background-color: rgba(255, 255, 255, 0.8);
     transition: all 0.25s;
-
-
-
+    background-color: rgba(225, 91, 91, 0.132);
 
 }
 
@@ -45,12 +45,25 @@ button {
 
 }
 
-#hover-overlay:hover {
-    opacity: 1;
+.card:hover {
+    color: #e15a5a;
 
-    button {
-        opacity: 1;
-        transform: none;
+    img {
+        opacity: 0.2;
     }
+
+    #hover-overlay {
+
+        opacity: 1;
+
+        button {
+            color: #e15a5a;
+
+            opacity: 1;
+            transform: none;
+        }
+
+    }
+
 
 }
