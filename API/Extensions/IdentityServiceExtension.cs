@@ -18,6 +18,7 @@ namespace API.Extensions
                 //identity options here
                 opt.Password.RequireUppercase = false;
                 opt.Password.RequireLowercase = false;
+                opt.Password.RequireNonAlphanumeric = false;
             })
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();

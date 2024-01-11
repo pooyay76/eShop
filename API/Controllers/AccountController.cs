@@ -70,9 +70,9 @@ namespace API.Controllers
         }
 
         [HttpGet("emailExists")]
-        public async Task<IActionResult> EmailExists([FromQuery] string email)
+        public async Task<ActionResult<bool>> CheckEmailExists([FromQuery] string email)
         {
-            return Ok(await _userManager.FindByEmailAsync(email) != null);
+            return (await _userManager.FindByEmailAsync(email)) != null;
         }
 
         [Authorize]
@@ -109,8 +109,11 @@ namespace API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
+            if (CheckEmailExists(registerDto.Email).Result.Value)
+                return BadRequest(new ApiValidationErrorResponse { Errors = new[] { "Email is in use, please use another email" } });
             AppUser user = new()
             {
+
                 Email = registerDto.Email,
                 DisplayName = registerDto.DisplayName,
                 UserName = registerDto.Username
